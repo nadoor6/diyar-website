@@ -1,4 +1,4 @@
-/* style.css – with hero background image bg1.jpg */
+/* style.css – with hero background image bg1.jpg and improved text contrast */
 
 html {
     scroll-behavior: smooth;
@@ -46,11 +46,12 @@ header {
     align-items: center;
     z-index: 100;
     background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(13px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .logo {
+    max-width: 125px;
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.6rem;
     letter-spacing: 6px;
@@ -59,7 +60,7 @@ header {
 }
 
 .thin-slash {
-    font-weight: 100;
+    font-weight: 300;
     opacity: 0.6;
     padding: 0 2px;
 }
@@ -126,8 +127,9 @@ nav a:hover {
     font-size: 0.7rem;
     letter-spacing: 6px;
     margin-bottom: 2rem;
-    color: #aaa;
-    font-weight: 300;
+    color: #bbb;
+    /* slightly brighter */
+    font-weight: 400;
 }
 
 
@@ -151,21 +153,24 @@ nav a:hover {
     font-size: 1rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #bbb;
+    color: #ddd;
+    /* brighter */
     margin-bottom: 2.5rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .status-line {
     margin-top: 3rem;
     font-size: 0.7rem;
     letter-spacing: 4px;
-    color: #777;
+    color: #bbb;
+    /* increased contrast */
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 2rem;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+    font-weight: 400;
 }
 
 .buttons {
@@ -225,8 +230,9 @@ nav a:hover {
     max-width: 700px;
     margin: 0 auto 3rem auto;
     font-size: 1rem;
-    color: #aaa;
-    font-weight: 300;
+    color: #ccc;
+    /* improved contrast */
+    font-weight: 400;
     line-height: 1.8;
 }
 
@@ -288,30 +294,34 @@ nav a:hover {
 }
 
 .project-card p {
-    color: #aaa;
+    color: #ccc;
+    /* improved */
     font-size: 0.85rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .project-location {
     font-size: 0.65rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #777;
+    color: #aaa;
+    /* brighter */
     border-top: 1px solid #333;
     padding-top: 1rem;
     display: inline-block;
+    font-weight: 400;
 }
 
 
 /* CONTACT */
 
 .contact-intro {
-    color: #aaa;
+    color: #ccc;
     margin-bottom: 2rem;
     font-size: 0.9rem;
+    font-weight: 400;
 }
 
 .contact-details {
@@ -325,15 +335,18 @@ nav a:hover {
 .contact-line {
     font-size: 0.9rem;
     letter-spacing: 1px;
-    color: #ccc;
-    font-weight: 300;
+    color: #fff;
+    /* full white for important contact */
+    font-weight: 400;
 }
 
 .muted-note {
-    color: #555;
+    color: #bbb;
+    /* increased from #555 */
     font-size: 0.7rem;
     letter-spacing: 2px;
     margin-top: 3rem;
+    font-weight: 400;
 }
 
 
@@ -344,9 +357,11 @@ footer {
     background: #000;
     text-align: center;
     font-size: 0.7rem;
-    color: #444;
+    color: #aaa;
+    /* much brighter than #444 */
     letter-spacing: 1px;
     border-top: 1px solid #1a1a1a;
+    font-weight: 400;
 }
 
 
