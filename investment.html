@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Diyar · early investment | Aleppo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- a few tiny adjustments specific to this page (kept minimal) -->
+    <style>
+        /* fine‑tuning for investment page – stays within black/white palette */
+        
+        .investment-hero {
+            height: 60vh;
+            background: url('bg1.png') center center / cover no-repeat;
+        }
+        
+        .investment-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 4rem 0 2rem;
+        }
+        
+        .investment-card {
+            background: #111;
+            padding: 2.5rem 2rem;
+            width: 280px;
+            border: 1px solid #222;
+            transition: 0.3s;
+            text-align: left;
+        }
+        
+        .investment-card:hover {
+            background: #1a1a1a;
+            border-color: #444;
+            transform: translateY(-8px);
+        }
+        
+        .investment-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        
+        .investment-card .commitment {
+            font-size: 0.9rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .investment-card p {
+            color: #ccc;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        
+        .investment-card .benefit {
+            color: #fff;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .back-link {
+            margin-top: 3rem;
+        }
+        
+        .back-link a {
+            color: #aaa;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+            padding-bottom: 2px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        
+        .back-link a:hover {
+            color: #fff;
+            border-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR (same as main page, links now point to index) -->
+    <header>
+        <a href="index.html"><img src="logo.png" alt="Diyar" class="logo"></a>
+        <nav>
+            <a href="index.html#about">About</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#early-investment">Early investment</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- SMALL HERO FOR INVESTMENT PAGE -->
+    <section class="hero investment-hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h3 class="pre-title" style="margin-bottom: -1.2rem;">exclusive opportunity</h3>
+            <h1 style="font-size: 4rem; margin-bottom: 0.5rem;">early investment</h1>
+            <p class="tagline">become a foundation partner</p>
+        </div>
+        <div class="hero-texture"></div>
+    </section>
+
+    <!-- INVESTMENT DETAILS -->
+    <section class="section" style="padding-top: 5rem;">
+        <h2>choose your commitment</h2>
+        <p class="section-intro">
+            Diyar offers three distinct paths for visionary partners. Each tier grants priority access, exclusive previews, and lasting recognition.
+        </p>
+
+        <div class="investment-grid">
+            <!-- FOUNDER'S CIRCLE -->
+            <div class="investment-card">
+                <h3>founder's circle</h3>
+                <div class="commitment">$100,000</div>
+                <p>First selection of residences · name engraved in lobby · private site tours with the principal architect · invitation to annual founder dinner.</p>
+                <span class="benefit">limited to 12 partners</span>
+            </div>
+
+            <!-- PRIORITY ACCESS -->
+            <div class="investment-card">
+                <h3>priority access</h3>
+                <div class="commitment">$50,000</div>
+                <p>Early floor plan selection · quarterly construction updates · dedicated relationship manager · pre‑opening event access.</p>
+                <span class="benefit">next release · Q1 2027</span>
+            </div>
+
+            <!-- EARLY INVESTOR -->
+            <div class="investment-card">
+                <h3>early investor</h3>
+                <div class="commitment">$25,000</div>
+                <p>First right to reserve · digital prospectus · invitation to sales gallery preview · priority for future Diyar projects.</p>
+                <span class="benefit">open now</span>
+            </div>
+        </div>
+
+        <!-- EXTRA DETAILS (in the same minimal tone) -->
+        <div style="max-width: 700px; margin: 3rem auto 0; color: #aaa; font-size: 0.9rem; border-top: 1px solid #222; padding-top: 2rem;">
+            <p>All commitments are fully refundable until the project launch. For detailed terms and to schedule a private consultation, please contact our investment office.</p>
+        </div>
+
+        <!-- CALL TO ACTION BUTTON (reusing .btn) -->
+        <div style="margin: 3rem 0 2rem;">
+            <a href="index.html#contact" class="btn">request prospectus</a>
+        </div>
+
+        <!-- BACK TO HOME LINK (subtle) -->
+        <div class="back-link">
+            <a href="index.html">← return to main</a>
+        </div>
+    </section>
+
+    <!-- FOOTER (same as index) -->
+    <footer>
+        <p>© 2024 - 2026 DIYAR · all rights reserved</p>
+    </footer>
+
+</body>
+
+</html>

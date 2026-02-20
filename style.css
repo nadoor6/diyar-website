@@ -1,4 +1,4 @@
-/* style.css – with hero background image bg1.jpg and improved text contrast */
+/* style.css – with hero background image bg1.jpg and new early investment button */
 
 html {
     scroll-behavior: smooth;
@@ -128,7 +128,6 @@ nav a:hover {
     letter-spacing: 6px;
     margin-bottom: 2rem;
     color: #bbb;
-    /* slightly brighter */
     font-weight: 400;
 }
 
@@ -154,7 +153,6 @@ nav a:hover {
     letter-spacing: 3px;
     text-transform: uppercase;
     color: #ddd;
-    /* brighter */
     margin-bottom: 2.5rem;
     font-weight: 400;
 }
@@ -164,7 +162,6 @@ nav a:hover {
     font-size: 0.7rem;
     letter-spacing: 4px;
     color: #bbb;
-    /* increased contrast */
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 2rem;
     width: 60%;
@@ -189,6 +186,8 @@ nav a:hover {
     transition: 0.3s ease-in-out;
     font-weight: 400;
     border: none;
+    display: inline-block;
+    /* added for better button behaviour */
 }
 
 .btn {
@@ -231,7 +230,6 @@ nav a:hover {
     margin: 0 auto 3rem auto;
     font-size: 1rem;
     color: #ccc;
-    /* improved contrast */
     font-weight: 400;
     line-height: 1.8;
 }
@@ -295,7 +293,6 @@ nav a:hover {
 
 .project-card p {
     color: #ccc;
-    /* improved */
     font-size: 0.85rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -307,11 +304,37 @@ nav a:hover {
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #aaa;
-    /* brighter */
     border-top: 1px solid #333;
     padding-top: 1rem;
     display: inline-block;
     font-weight: 400;
+}
+
+
+/* EARLY INVESTMENT SECTION */
+
+.investment-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2rem 0 3rem;
+}
+
+.investment-line {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+
+/* new button wrapper for centering and spacing */
+
+.investment-btn-wrapper {
+    text-align: center;
+    margin: 2rem 0 3rem;
 }
 
 
@@ -336,13 +359,11 @@ nav a:hover {
     font-size: 0.9rem;
     letter-spacing: 1px;
     color: #fff;
-    /* full white for important contact */
     font-weight: 400;
 }
 
 .muted-note {
     color: #bbb;
-    /* increased from #555 */
     font-size: 0.7rem;
     letter-spacing: 2px;
     margin-top: 3rem;
@@ -358,14 +379,13 @@ footer {
     text-align: center;
     font-size: 0.7rem;
     color: #aaa;
-    /* much brighter than #444 */
     letter-spacing: 1px;
     border-top: 1px solid #1a1a1a;
     font-weight: 400;
 }
 
 
-/* FADE IN ANIMATION */
+/* FADE IN ANIMATION (updated for new section) */
 
 .section,
 .hero-content,
@@ -385,6 +405,17 @@ footer {
 
 .section:nth-of-type(3) {
     animation-delay: 0.45s;
+}
+
+.section:nth-of-type(4) {
+    animation-delay: 0.6s;
+}
+
+
+/* early investment is 4th section, contact is 5th */
+
+.section:nth-of-type(5) {
+    animation-delay: 0.75s;
 }
 
 @keyframes fadeUp {
