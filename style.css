@@ -1,4 +1,32 @@
-/* style.css – with hero background image bg1.jpg and new early investment button */
+/* style.css – with Arabic font support and language switcher */
+
+@font-face {
+    font-family: 'Saudi';
+    src: url('fonts/Saudi-Regular.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Saudi';
+    src: url('fonts/Saudi-Medium.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Saudi';
+    src: url('fonts/Saudi-SemiBold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Saudi';
+    src: url('fonts/Saudi-Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
 
 html {
     scroll-behavior: smooth;
@@ -18,6 +46,14 @@ body {
     line-height: 1.6;
 }
 
+
+/* Arabic overrides */
+
+html[lang="ar"] body,
+body[dir="rtl"] {
+    font-family: 'Saudi', 'Montserrat', sans-serif;
+}
+
 h1,
 h2,
 h3 {
@@ -25,6 +61,17 @@ h3 {
     font-weight: 300;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+}
+
+
+/* Arabic headings can also use Saudi if desired, but keep Cormorant for elegance */
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3 {
+    font-family: 'Saudi', 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 
 h2 {
@@ -59,6 +106,14 @@ header {
     color: #fff;
 }
 
+
+/* Arabic logo text (if any) */
+
+html[lang="ar"] .logo {
+    font-family: 'Saudi', serif;
+    letter-spacing: 2px;
+}
+
 .thin-slash {
     font-weight: 300;
     opacity: 0.6;
@@ -83,7 +138,34 @@ nav a:hover {
 }
 
 
-/* HERO – with background image */
+/* language switcher button (subtle) */
+
+.lang-btn {
+    border: 1px solid #444;
+    padding: 0.3rem 1rem;
+    border-radius: 0;
+    font-size: 0.7rem;
+}
+
+.lang-btn:hover {
+    border-color: #fff;
+}
+
+
+/* RTL navbar adjustments */
+
+html[dir="rtl"] nav a {
+    margin-left: 0;
+    margin-right: 2.5rem;
+}
+
+html[dir="rtl"] .lang-btn {
+    margin-right: 2.5rem;
+    margin-left: 0;
+}
+
+
+/* HERO */
 
 .hero {
     height: 100vh;
@@ -93,7 +175,6 @@ nav a:hover {
     align-items: center;
     text-align: center;
     overflow: hidden;
-    /* background image */
     background: url('bg1.png') center center / cover no-repeat;
 }
 
@@ -131,9 +212,6 @@ nav a:hover {
     font-weight: 400;
 }
 
-
-/* logo image */
-
 .hero-logo {
     display: block;
     max-width: 320px;
@@ -170,6 +248,11 @@ nav a:hover {
     font-weight: 400;
 }
 
+html[dir="rtl"] .status-line {
+    letter-spacing: 2px;
+    /* less spacing for Arabic */
+}
+
 .buttons {
     display: flex;
     justify-content: center;
@@ -187,7 +270,6 @@ nav a:hover {
     font-weight: 400;
     border: none;
     display: inline-block;
-    /* added for better button behaviour */
 }
 
 .btn {
@@ -311,6 +393,13 @@ nav a:hover {
 }
 
 
+/* RTL cards */
+
+html[dir="rtl"] .project-card {
+    text-align: right;
+}
+
+
 /* EARLY INVESTMENT SECTION */
 
 .investment-detail {
@@ -328,9 +417,6 @@ nav a:hover {
     font-weight: 400;
     text-transform: uppercase;
 }
-
-
-/* new button wrapper for centering and spacing */
 
 .investment-btn-wrapper {
     text-align: center;
@@ -370,6 +456,10 @@ nav a:hover {
     font-weight: 400;
 }
 
+html[dir="rtl"] .muted-note {
+    letter-spacing: 1px;
+}
+
 
 /* FOOTER */
 
@@ -385,7 +475,7 @@ footer {
 }
 
 
-/* FADE IN ANIMATION (updated for new section) */
+/* FADE IN ANIMATION */
 
 .section,
 .hero-content,
@@ -411,9 +501,6 @@ footer {
     animation-delay: 0.6s;
 }
 
-
-/* early investment is 4th section, contact is 5th */
-
 .section:nth-of-type(5) {
     animation-delay: 0.75s;
 }
@@ -424,9 +511,6 @@ footer {
         transform: translateY(0);
     }
 }
-
-
-/* selection / scrollbar */
 
 ::selection {
     background: #fff;
