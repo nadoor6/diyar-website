@@ -45,7 +45,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(13px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
