@@ -52,6 +52,8 @@ body {
 html[lang="ar"] body,
 body[dir="rtl"] {
     font-family: 'Saudi', 'Montserrat', sans-serif;
+    /* slightly larger base for better readability */
+    font-size: 16px;
 }
 
 h1,
@@ -64,14 +66,16 @@ h3 {
 }
 
 
-/* Arabic headings can also use Saudi if desired, but keep Cormorant for elegance */
+/* Arabic headings – reset letter spacing, increase size a bit */
 
 html[lang="ar"] h1,
 html[lang="ar"] h2,
 html[lang="ar"] h3 {
     font-family: 'Saudi', 'Cormorant Garamond', serif;
+    letter-spacing: normal;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    font-size: 2.4rem;
+    /* slightly larger */
 }
 
 h2 {
@@ -106,12 +110,9 @@ header {
     color: #fff;
 }
 
-
-/* Arabic logo text (if any) */
-
 html[lang="ar"] .logo {
     font-family: 'Saudi', serif;
-    letter-spacing: 2px;
+    letter-spacing: normal;
 }
 
 .thin-slash {
@@ -212,6 +213,11 @@ html[dir="rtl"] .lang-btn {
     font-weight: 400;
 }
 
+html[lang="ar"] .pre-title {
+    font-size: 1rem;
+    letter-spacing: normal;
+}
+
 .hero-logo {
     display: block;
     max-width: 320px;
@@ -235,6 +241,11 @@ html[dir="rtl"] .lang-btn {
     font-weight: 400;
 }
 
+html[lang="ar"] .tagline {
+    font-size: 1.3rem;
+    letter-spacing: normal;
+}
+
 .status-line {
     margin-top: 3rem;
     font-size: 0.7rem;
@@ -248,9 +259,9 @@ html[dir="rtl"] .lang-btn {
     font-weight: 400;
 }
 
-html[dir="rtl"] .status-line {
-    letter-spacing: 2px;
-    /* less spacing for Arabic */
+html[lang="ar"] .status-line {
+    font-size: 1rem;
+    letter-spacing: normal;
 }
 
 .buttons {
@@ -270,6 +281,12 @@ html[dir="rtl"] .status-line {
     font-weight: 400;
     border: none;
     display: inline-block;
+}
+
+html[lang="ar"] .btn,
+html[lang="ar"] .btn-outline {
+    font-size: 0.85rem;
+    letter-spacing: normal;
 }
 
 .btn {
@@ -313,6 +330,11 @@ html[dir="rtl"] .status-line {
     font-size: 1rem;
     color: #ccc;
     font-weight: 400;
+    line-height: 1.8;
+}
+
+html[lang="ar"] .section-intro {
+    font-size: 1.2rem;
     line-height: 1.8;
 }
 
@@ -373,12 +395,21 @@ html[dir="rtl"] .status-line {
     letter-spacing: 2px;
 }
 
+html[lang="ar"] .project-card h3 {
+    font-size: 1.8rem;
+    letter-spacing: normal;
+}
+
 .project-card p {
     color: #ccc;
     font-size: 0.85rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
     font-weight: 400;
+}
+
+html[lang="ar"] .project-card p {
+    font-size: 1rem;
 }
 
 .project-location {
@@ -390,6 +421,11 @@ html[dir="rtl"] .status-line {
     padding-top: 1rem;
     display: inline-block;
     font-weight: 400;
+}
+
+html[lang="ar"] .project-location {
+    font-size: 0.8rem;
+    letter-spacing: normal;
 }
 
 
@@ -418,6 +454,11 @@ html[dir="rtl"] .project-card {
     text-transform: uppercase;
 }
 
+html[lang="ar"] .investment-line {
+    font-size: 1.1rem;
+    letter-spacing: normal;
+}
+
 .investment-btn-wrapper {
     text-align: center;
     margin: 2rem 0 3rem;
@@ -431,6 +472,10 @@ html[dir="rtl"] .project-card {
     margin-bottom: 2rem;
     font-size: 0.9rem;
     font-weight: 400;
+}
+
+html[lang="ar"] .contact-intro {
+    font-size: 1.1rem;
 }
 
 .contact-details {
@@ -448,6 +493,11 @@ html[dir="rtl"] .project-card {
     font-weight: 400;
 }
 
+html[lang="ar"] .contact-line {
+    font-size: 1.1rem;
+    letter-spacing: normal;
+}
+
 .muted-note {
     color: #bbb;
     font-size: 0.7rem;
@@ -456,8 +506,9 @@ html[dir="rtl"] .project-card {
     font-weight: 400;
 }
 
-html[dir="rtl"] .muted-note {
-    letter-spacing: 1px;
+html[lang="ar"] .muted-note {
+    font-size: 0.9rem;
+    letter-spacing: normal;
 }
 
 
@@ -472,6 +523,11 @@ footer {
     letter-spacing: 1px;
     border-top: 1px solid #1a1a1a;
     font-weight: 400;
+}
+
+html[lang="ar"] footer {
+    font-size: 0.9rem;
+    letter-spacing: normal;
 }
 
 
