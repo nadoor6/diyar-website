@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Diyar · War Room | Operation Diyar Al‑Fajr</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .war-hero {
+            height: 70vh;
+            background: url('bg1.png') center/cover no-repeat;
+        }
+        
+        .stat-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: #fff;
+            line-height: 1.2;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: #aaa;
+            text-transform: uppercase;
+        }
+        
+        .pillar-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .pillar-card {
+            background: #111;
+            padding: 2.5rem 2rem;
+            width: 280px;
+            border: 1px solid #222;
+            transition: 0.3s;
+            text-align: left;
+        }
+        
+        .pillar-card:hover {
+            background: #1a1a1a;
+            border-color: #444;
+            transform: translateY(-8px);
+        }
+        
+        .pillar-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        
+        .pillar-card .commitment {
+            font-size: 0.9rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pillar-card p {
+            color: #ccc;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        
+        .pillar-card .benefit {
+            color: #fff;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .phase {
+            background: #111;
+            padding: 2rem;
+            width: 250px;
+            border: 1px solid #222;
+        }
+        
+        .phase h4 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+        
+        .phase .dates {
+            color: #888;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .phase ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .phase li {
+            color: #ccc;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+        
+        .phase li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #555;
+        }
+        
+        .schedule {
+            max-width: 600px;
+            margin: 3rem auto;
+            text-align: left;
+            background: #111;
+            padding: 2rem;
+            border: 1px solid #222;
+        }
+        
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #222;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+        
+        .schedule-time {
+            color: #fff;
+            font-weight: 400;
+        }
+        
+        .log-section {
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+        
+        .log-card {
+            background: #111;
+            border: 1px solid #222;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .log-card .date {
+            color: #888;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .log-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .log-entry {
+            background: #111;
+            padding: 1.5rem;
+            border: 1px solid #222;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .log-entry textarea {
+            width: 100%;
+            background: #0b0b0b;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            resize: vertical;
+            margin-bottom: 1rem;
+        }
+        
+        .log-entry button {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 0.7rem 2rem;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-right: 1rem;
+        }
+        
+        .log-entry button:hover {
+            background: #ccc;
+        }
+        
+        .bible-link {
+            margin: 3rem 0;
+        }
+        
+        .back-link {
+            margin-top: 3rem;
+        }
+        
+        .back-link a {
+            color: #aaa;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+            padding-bottom: 2px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        
+        .back-link a:hover {
+            color: #fff;
+            border-color: #fff;
+        }
+        
+        html[lang="ar"] .pillar-card {
+            text-align: right;
+        }
+        
+        html[lang="ar"] .phase li::before {
+            content: "—";
+            right: 0;
+            left: auto;
+        }
+        
+        html[lang="ar"] .phase li {
+            padding-right: 1rem;
+            padding-left: 0;
+        }
+        
+        .clear-btn {
+            background: transparent !important;
+            color: #aaa !important;
+            border: 1px solid #333 !important;
+        }
+        
+        .clear-btn:hover {
+            background: #1a1a1a !important;
+            color: #fff !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img src="logo.png" alt="Diyar" class="logo"></a>
+        <nav>
+            <a href="index.html#about">About</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#early-investment">Early investment</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="operation-diyar-al-fajr-ar.html" class="lang-btn">عربي</a>
+        </nav>
+    </header>
+
+    <section class="hero war-hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h3 class="pre-title">operation · ديـار الفجر</h3>
+            <h1 style="font-size:5rem; margin-bottom:0.5rem;">war room</h1>
+            <p class="tagline">104 days to victory · june 6 2026</p>
+            <div class="status-line" id="countdown">loading...</div>
+        </div>
+        <div class="hero-texture"></div>
+    </section>
+
+    <section class="section" style="padding-top:5rem;">
+        <h2>mission brief</h2>
+        <p class="section-intro">
+            Conquer the final high school exam, forge the warrior’s body, and crystallise the Diyar vision.<br> Zero excuses. Full mobilisation.
+        </p>
+        <div class="thin-rule"></div>
+
+        <!-- Stats -->
+        <div class="stat-grid">
+            <div class="stat-item">
+                <div class="stat-number" id="days-remaining">104</div>
+                <div class="stat-label">days to d‑day</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">study hours</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">48</div>
+                <div class="stat-label">gym sessions</div>
+            </div>
+        </div>
+
+        <!-- Three Pillars -->
+        <h2 style="margin-top:5rem;">the three pillars</h2>
+        <div class="pillar-grid">
+            <div class="pillar-card">
+                <h3>the mind</h3>
+                <div class="commitment">political science & finals</div>
+                <p>Daily 4‑hour deep study blocks. Past papers from May. Triage subjects: easy wins first.</p>
+                <span class="benefit">target · 85%+</span>
+            </div>
+            <div class="pillar-card">
+                <h3>the empire</h3>
+                <div class="commitment">diyar vision</div>
+                <p>15 minutes daily on Diyar Bible. Research luxury brands, sketch logos, define mission.</p>
+                <span class="benefit">next milestone · prospectus</span>
+            </div>
+            <div class="pillar-card">
+                <h3>the body</h3>
+                <div class="commitment">warrior shape</div>
+                <p>Gym 4x/week (chest/back, legs/shoulders). Protein, sleep, no excuses.</p>
+                <span class="benefit">ripped by june</span>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <h2>operation phases</h2>
+        <div class="timeline">
+            <div class="phase">
+                <h4>I · awakening</h4>
+                <div class="dates">feb 22 – mar 15</div>
+                <ul>
+                    <li>build habits</li>
+                    <li>triage subjects</li>
+                    <li>teacher attack</li>
+                </ul>
+            </div>
+            <div class="phase">
+                <h4>II · the grind</h4>
+                <div class="dates">mar 16 – may 1</div>
+                <ul>
+                    <li>5‑6h study daily</li>
+                    <li>past papers begin</li>
+                    <li>increase gym intensity</li>
+                </ul>
+            </div>
+            <div class="phase">
+                <h4>III · championship</h4>
+                <div class="dates">may 2 – jun 5</div>
+                <ul>
+                    <li>90% past papers</li>
+                    <li>sleep as weapon</li>
+                    <li>maintenance mode</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Daily Battle Rhythm -->
+        <h2>daily battle rhythm</h2>
+        <div class="schedule">
+            <div class="schedule-item"><span class="schedule-time">6:30</span> <span>wake, stretch, no phone</span></div>
+            <div class="schedule-item"><span class="schedule-time">7:00–8:30</span> <span>study block 1 (heavy)</span></div>
+            <div class="schedule-item"><span class="schedule-time">8:30–9:00</span> <span>breakfast</span></div>
+            <div class="schedule-item"><span class="schedule-time">9:00–13:00</span> <span>school (front row, ask)</span></div>
+            <div class="schedule-item"><span class="schedule-time">13:00–14:00</span> <span>lunch & nap</span></div>
+            <div class="schedule-item"><span class="schedule-time">14:00–15:00</span> <span>diyar time / news</span></div>
+            <div class="schedule-item"><span class="schedule-time">15:30–17:00</span> <span>study block 2 (memorisation)</span></div>
+            <div class="schedule-item"><span class="schedule-time">17:30–18:30</span> <span>gym</span></div>
+            <div class="schedule-item"><span class="schedule-time">19:00 onwards</span> <span>family, rest, plan tomorrow</span></div>
+        </div>
+
+        <!-- Commander's Log (with localStorage) -->
+        <h2>commander’s log</h2>
+        <div class="log-section" id="log-section">
+            <div class="log-entry">
+                <textarea id="log-input" rows="3" placeholder="Write today’s victory..."></textarea>
+                <button id="save-log">record win</button>
+                <button id="clear-logs" class="clear-btn">clear all logs</button>
+            </div>
+            <div id="log-container"></div>
+        </div>
+
+        <!-- Diyar Bible link -->
+        <div class="bible-link">
+            <a href="diyar-bible.html" class="btn-outline">open full bible →</a>
+        </div>
+
+        <div class="thin-rule"></div>
+        <p class="muted-note" style="margin-top:3rem;">every day is a battle. every battle brings diyar closer.</p>
+
+        <div class="back-link">
+            <a href="index.html">← return to main</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 - 2026 DIYAR · all rights reserved · commander nader</p>
+    </footer>
+
+    <script>
+        // Countdown to June 6, 2026
+        function updateCountdown() {
+            const target = new Date(2026, 5, 6);
+            const today = new Date();
+            const diff = target - today;
+            const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('days-remaining').innerText = days;
+            document.getElementById('countdown').innerHTML = days + ' days remain · zero hour approaches';
+        }
+        updateCountdown();
+
+        // Commander's Log - localStorage
+        const STORAGE_KEY = 'diyar_war_logs';
+        const logInput = document.getElementById('log-input');
+        const saveBtn = document.getElementById('save-log');
+        const clearBtn = document.getElementById('clear-logs');
+        const logContainer = document.getElementById('log-container');
+
+        function loadLogs() {
+            const logs = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            logContainer.innerHTML = '';
+            logs.slice().reverse().forEach(log => {
+                const card = document.createElement('div');
+                card.className = 'log-card';
+                card.innerHTML = `<div class="date">${log.date}</div><p>${log.text}</p>`;
+                logContainer.appendChild(card);
+            });
+        }
+
+        function saveLog() {
+            const text = logInput.value.trim();
+            if (!text) return;
+            const logs = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            logs.push({
+                date: new Date().toLocaleDateString('en-GB'),
+                text: text
+            });
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(logs));
+            logInput.value = '';
+            loadLogs();
+        }
+
+        function clearLogs() {
+            if (confirm('Delete all commander’s logs?')) {
+                localStorage.removeItem(STORAGE_KEY);
+                loadLogs();
+            }
+        }
+
+        saveBtn.addEventListener('click', saveLog);
+        clearBtn.addEventListener('click', clearLogs);
+        loadLogs();
+    </script>
+</body>
+
+</html>

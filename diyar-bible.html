@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Diyar · The Bible | Vision Journal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .bible-hero {
+            height: 40vh;
+            background: url('bg1.png') center/cover no-repeat;
+        }
+        
+        .bible-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .entry-form {
+            background: #111;
+            border: 1px solid #222;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+        
+        .entry-form input,
+        .entry-form textarea {
+            width: 100%;
+            background: #0b0b0b;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .entry-form button {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 0.7rem 2rem;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-right: 1rem;
+        }
+        
+        .entry-form button:hover {
+            background: #ccc;
+        }
+        
+        .entry-card {
+            background: #111;
+            border: 1px solid #222;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .entry-card .entry-title {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .entry-card .entry-date {
+            color: #888;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .entry-card .entry-content {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+        
+        .entry-card .delete-btn {
+            background: transparent;
+            border: 1px solid #444;
+            color: #aaa;
+            padding: 0.3rem 1rem;
+            font-size: 0.6rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: 0.3s;
+        }
+        
+        .entry-card .delete-btn:hover {
+            background: #ff4444;
+            color: #fff;
+            border-color: #ff4444;
+        }
+        
+        .back-link {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .back-link a {
+            color: #aaa;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+            padding-bottom: 2px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+        
+        .back-link a:hover {
+            color: #fff;
+            border-color: #fff;
+        }
+        
+        .clear-all {
+            background: transparent !important;
+            border: 1px solid #333 !important;
+            color: #aaa !important;
+        }
+        
+        .clear-all:hover {
+            background: #1a1a1a !important;
+            color: #fff !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img src="logo.png" alt="Diyar" class="logo"></a>
+        <nav>
+            <a href="index.html#about">About</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#early-investment">Early investment</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="diyar-bible-ar.html" class="lang-btn">عربي</a>
+        </nav>
+    </header>
+
+    <section class="hero bible-hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h3 class="pre-title">the foundation</h3>
+            <h1 style="font-size:4rem;">diyar bible</h1>
+            <p class="tagline">vision · research · legacy</p>
+        </div>
+        <div class="hero-texture"></div>
+    </section>
+
+    <section class="section" style="padding-top:3rem;">
+        <div class="bible-container">
+            <!-- Entry Form -->
+            <div class="entry-form">
+                <input type="text" id="entry-title" placeholder="Entry title (e.g. Logo sketch, Mission, Market research)">
+                <textarea id="entry-content" rows="5" placeholder="Write your thoughts, ideas, research..."></textarea>
+                <button id="save-entry">save to bible</button>
+                <button id="clear-all" class="clear-all">clear all entries</button>
+            </div>
+
+            <!-- Entries Container -->
+            <div id="entries-container"></div>
+
+            <div class="back-link">
+                <a href="operation-diyar-al-fajr.html">← return to war room</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 - 2026 DIYAR · all rights reserved · the bible</p>
+    </footer>
+
+    <script>
+        const STORAGE_KEY = 'diyar_bible_entries';
+        const titleInput = document.getElementById('entry-title');
+        const contentInput = document.getElementById('entry-content');
+        const saveBtn = document.getElementById('save-entry');
+        const clearAllBtn = document.getElementById('clear-all');
+        const container = document.getElementById('entries-container');
+
+        function loadEntries() {
+            const entries = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            container.innerHTML = '';
+            entries.slice().reverse().forEach((entry, index) => {
+                const card = document.createElement('div');
+                card.className = 'entry-card';
+                card.innerHTML = `
+                    <div class="entry-title">${escapeHtml(entry.title) || 'Untitled'}</div>
+                    <div class="entry-date">${entry.date}</div>
+                    <div class="entry-content">${escapeHtml(entry.content)}</div>
+                    <button class="delete-btn" data-index="${entries.length - 1 - index}">delete</button>
+                `;
+                container.appendChild(card);
+            });
+
+            // Attach delete events
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const idx = this.getAttribute('data-index');
+                    deleteEntry(idx);
+                });
+            });
+        }
+
+        function escapeHtml(unsafe) {
+            if (!unsafe) return '';
+            return unsafe.replace(/[&<>"]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                if (m === '"') return '&quot;';
+                return m;
+            });
+        }
+
+        function saveEntry() {
+            const title = titleInput.value.trim();
+            const content = contentInput.value.trim();
+            if (!content) return;
+            const entries = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            entries.push({
+                title: title || '(no title)',
+                content: content,
+                date: new Date().toLocaleDateString('en-GB') + ' ' + new Date().toLocaleTimeString('en-GB', {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                })
+            });
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+            titleInput.value = '';
+            contentInput.value = '';
+            loadEntries();
+        }
+
+        function deleteEntry(index) {
+            const entries = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            entries.splice(index, 1);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+            loadEntries();
+        }
+
+        function clearAll() {
+            if (confirm('Permanently delete all Bible entries?')) {
+                localStorage.removeItem(STORAGE_KEY);
+                loadEntries();
+            }
+        }
+
+        saveBtn.addEventListener('click', saveEntry);
+        clearAllBtn.addEventListener('click', clearAll);
+        loadEntries();
+    </script>
+</body>
+
+</html>

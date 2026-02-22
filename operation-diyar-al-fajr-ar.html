@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ديار · غرفة العمليات | عملية ديار الفجر</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* same enhanced styles as English version */
+        
+        .war-hero {
+            height: 70vh;
+            background: url('bg1.png') center/cover no-repeat;
+        }
+        
+        .stat-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: #fff;
+            line-height: 1.2;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: #aaa;
+            text-transform: uppercase;
+        }
+        
+        .pillar-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .pillar-card {
+            background: #111;
+            padding: 2.5rem 2rem;
+            width: 280px;
+            border: 1px solid #222;
+            transition: 0.3s;
+            text-align: right;
+        }
+        
+        .pillar-card:hover {
+            background: #1a1a1a;
+            border-color: #444;
+            transform: translateY(-8px);
+        }
+        
+        .pillar-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        
+        .pillar-card .commitment {
+            font-size: 0.9rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pillar-card p {
+            color: #ccc;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        
+        .pillar-card .benefit {
+            color: #fff;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .phase {
+            background: #111;
+            padding: 2rem;
+            width: 250px;
+            border: 1px solid #222;
+            text-align: right;
+        }
+        
+        .phase h4 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+        
+        .phase .dates {
+            color: #888;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .phase ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .phase li {
+            color: #ccc;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            padding-right: 1rem;
+            position: relative;
+        }
+        
+        .phase li::before {
+            content: "—";
+            position: absolute;
+            right: 0;
+            color: #555;
+        }
+        
+        .schedule {
+            max-width: 600px;
+            margin: 3rem auto;
+            text-align: right;
+            background: #111;
+            padding: 2rem;
+            border: 1px solid #222;
+        }
+        
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #222;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+        
+        .schedule-time {
+            color: #fff;
+            font-weight: 400;
+        }
+        
+        .log-section {
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+        
+        .log-card {
+            background: #111;
+            border: 1px solid #222;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: right;
+        }
+        
+        .log-card .date {
+            color: #888;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .log-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .log-entry {
+            background: #111;
+            padding: 1.5rem;
+            border: 1px solid #222;
+            margin: 2rem 0;
+            text-align: right;
+        }
+        
+        .log-entry textarea {
+            width: 100%;
+            background: #0b0b0b;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            resize: vertical;
+            margin-bottom: 1rem;
+        }
+        
+        .log-entry button {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 0.7rem 2rem;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-left: 1rem;
+        }
+        
+        .log-entry button:hover {
+            background: #ccc;
+        }
+        
+        .bible-link {
+            margin: 3rem 0;
+        }
+        
+        .back-link {
+            margin-top: 3rem;
+        }
+        
+        .back-link a {
+            color: #aaa;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+            padding-bottom: 2px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        
+        .back-link a:hover {
+            color: #fff;
+            border-color: #fff;
+        }
+        
+        .clear-btn {
+            background: transparent !important;
+            color: #aaa !important;
+            border: 1px solid #333 !important;
+        }
+        
+        .clear-btn:hover {
+            background: #1a1a1a !important;
+            color: #fff !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index-ar.html"><img src="logo.png" alt="ديار" class="logo"></a>
+        <nav>
+            <a href="index-ar.html#about">عن ديار</a>
+            <a href="index-ar.html#projects">مشاريعنا</a>
+            <a href="index-ar.html#early-investment">الاستثمار المبكر</a>
+            <a href="index-ar.html#contact">اتصل بنا</a>
+            <a href="operation-diyar-al-fajr.html" class="lang-btn">English</a>
+        </nav>
+    </header>
+
+    <section class="hero war-hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h3 class="pre-title">عملية · ديـار الفجر</h3>
+            <h1 style="font-size:5rem; margin-bottom:0.5rem;">غرفة العمليات</h1>
+            <p class="tagline">١٠٤ أيام للنصر · ٦ حزيران ٢٠٢٦</p>
+            <div class="status-line" id="countdown">جاري التحميل...</div>
+        </div>
+        <div class="hero-texture"></div>
+    </section>
+
+    <section class="section" style="padding-top:5rem;">
+        <h2>خلاصة المهمة</h2>
+        <p class="section-intro">
+            اجتياز امتحان الثانوية العامة، تشكيل جسد المحارب، وبلورة رؤية ديار.<br> لا أعذار. تعبئة كاملة.
+        </p>
+        <div class="thin-rule"></div>
+
+        <!-- إحصائيات -->
+        <div class="stat-grid">
+            <div class="stat-item">
+                <div class="stat-number" id="days-remaining">١٠٤</div>
+                <div class="stat-label">يوماً للانطلاق</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">٥٠٠+</div>
+                <div class="stat-label">ساعة دراسة</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">٤٨</div>
+                <div class="stat-label">حصة رياضية</div>
+            </div>
+        </div>
+
+        <!-- الأعمدة الثلاثة -->
+        <h2 style="margin-top:5rem;">الأعمدة الثلاثة</h2>
+        <div class="pillar-grid">
+            <div class="pillar-card">
+                <h3>العقل</h3>
+                <div class="commitment">علوم سياسية وامتحانات</div>
+                <p>كتل دراسة عميقة ٤ ساعات يومياً. امتحانات سابقة من أيار. تصنيف المواد: المكاسب السهلة أولاً.</p><span class="benefit">الهدف · ٨٥٪+</span></div>
+            <div class="pillar-card">
+                <h3>الإمبراطورية</h3>
+                <div class="commitment">رؤية ديار</div>
+                <p>١٥ دقيقة يومياً على كتاب ديار المقدس. بحث في العلامات الفاخرة، رسم شعارات، تحديد الرسالة.</p><span class="benefit">المرحلة التالية · النشرة</span></div>
+            <div class="pillar-card">
+                <h3>الجسد</h3>
+                <div class="commitment">هيئة المحارب</div>
+                <p>نادي رياضي ٤ مرات/أسبوع (صدر/ظهر، أرجل/أكتاف). بروتين، نوم، لا أعذار.</p><span class="benefit">مفتول العضلات بحزيران</span></div>
+        </div>
+
+        <!-- مراحل العملية -->
+        <h2>مراحل العملية</h2>
+        <div class="timeline">
+            <div class="phase">
+                <h4>١ · الصحوة</h4>
+                <div class="dates">٢٢ شباط – ١٥ آذار</div>
+                <ul>
+                    <li>بناء العادات</li>
+                    <li>تصنيف المواد</li>
+                    <li>هجوم المعلمين</li>
+                </ul>
+            </div>
+            <div class="phase">
+                <h4>٢ · الطحن</h4>
+                <div class="dates">١٦ آذار – ١ أيار</div>
+                <ul>
+                    <li>٥-٦ س دراسة يومياً</li>
+                    <li>بدء الامتحانات السابقة</li>
+                    <li>زيادة كثافة الرياضة</li>
+                </ul>
+            </div>
+            <div class="phase">
+                <h4>٣ · البطولة</h4>
+                <div class="dates">٢ أيار – ٥ حزيران</div>
+                <ul>
+                    <li>٩٠٪ امتحانات سابقة</li>
+                    <li>النوم كسلاح</li>
+                    <li>وضع الصيانة</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- الإيقاع اليومي -->
+        <h2>الإيقاع اليومي</h2>
+        <div class="schedule">
+            <div class="schedule-item"><span class="schedule-time">٦:٣٠</span> <span>استيقاظ، تمدد، لا هاتف</span></div>
+            <div class="schedule-item"><span class="schedule-time">٧:٠٠–٨:٣٠</span> <span>كتلة دراسة ١ (ثقيل)</span></div>
+            <div class="schedule-item"><span class="schedule-time">٨:٣٠–٩:٠٠</span> <span>إفطار</span></div>
+            <div class="schedule-item"><span class="schedule-time">٩:٠٠–١٣:٠٠</span> <span>مدرسة (الصف الأول، أسأل)</span></div>
+            <div class="schedule-item"><span class="schedule-time">١٣:٠٠–١٤:٠٠</span> <span>غداء وقيلولة</span></div>
+            <div class="schedule-item"><span class="schedule-time">١٤:٠٠–١٥:٠٠</span> <span>وقت ديار / أخبار</span></div>
+            <div class="schedule-item"><span class="schedule-time">١٥:٣٠–١٧:٠٠</span> <span>كتلة دراسة ٢ (حفظ)</span></div>
+            <div class="schedule-item"><span class="schedule-time">١٧:٣٠–١٨:٣٠</span> <span>نادي رياضي</span></div>
+            <div class="schedule-item"><span class="schedule-time">١٩:٠٠ فصاعداً</span> <span>عائلة، راحة، تخطيط الغد</span></div>
+        </div>
+
+        <!-- سجل القائد (مع localStorage) -->
+        <h2>سجل القائد</h2>
+        <div class="log-section" id="log-section">
+            <div class="log-entry">
+                <textarea id="log-input" rows="3" placeholder="اكتب انتصار اليوم..."></textarea>
+                <button id="save-log">سجل الانتصار</button>
+                <button id="clear-logs" class="clear-btn">احذف كل السجلات</button>
+            </div>
+            <div id="log-container"></div>
+        </div>
+
+        <!-- رابط الكتاب المقدس -->
+        <div class="bible-link">
+            <a href="diyar-bible-ar.html" class="btn-outline">افتح الكتاب الكامل ←</a>
+        </div>
+
+        <div class="thin-rule"></div>
+        <p class="muted-note" style="margin-top:3rem;">كل يوم معركة. كل معركة تقرب ديار.</p>
+
+        <div class="back-link">
+            <a href="index-ar.html">← العودة إلى الرئيسية</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© ٢٠٢٤ - ٢٠٢٦ ديار · جميع الحقوق محفوظة · القائد نادر</p>
+    </footer>
+
+    <script>
+        // العد التنازلي
+        function updateCountdown() {
+            const target = new Date(2026, 5, 6);
+            const today = new Date();
+            const diff = target - today;
+            const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('days-remaining').innerText = days;
+            document.getElementById('countdown').innerHTML = days + ' يوماً متبقياً · ساعة الصفر تقترب';
+        }
+        updateCountdown();
+
+        // سجل القائد - localStorage (باستخدام مفتاح منفصل للعربية)
+        const STORAGE_KEY = 'diyar_war_logs_ar';
+        const logInput = document.getElementById('log-input');
+        const saveBtn = document.getElementById('save-log');
+        const clearBtn = document.getElementById('clear-logs');
+        const logContainer = document.getElementById('log-container');
+
+        function loadLogs() {
+            const logs = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            logContainer.innerHTML = '';
+            logs.slice().reverse().forEach(log => {
+                const card = document.createElement('div');
+                card.className = 'log-card';
+                card.innerHTML = `<div class="date">${log.date}</div><p>${log.text}</p>`;
+                logContainer.appendChild(card);
+            });
+        }
+
+        function saveLog() {
+            const text = logInput.value.trim();
+            if (!text) return;
+            const logs = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            logs.push({
+                date: new Date().toLocaleDateString('ar-EG'),
+                text: text
+            });
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(logs));
+            logInput.value = '';
+            loadLogs();
+        }
+
+        function clearLogs() {
+            if (confirm('حذف كل سجلات القائد؟')) {
+                localStorage.removeItem(STORAGE_KEY);
+                loadLogs();
+            }
+        }
+
+        saveBtn.addEventListener('click', saveLog);
+        clearBtn.addEventListener('click', clearLogs);
+        loadLogs();
+    </script>
+</body>
+
+</html>
